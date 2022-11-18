@@ -15,7 +15,7 @@ class AddRow(QWidget, Ui_Form):
         super().__init__()
         self.setupUi(self)
         self.pushButton.clicked.connect(self.addrow)
-        self.con = sqlite3.connect('coffee.sqlite')
+        self.con = sqlite3.connect('data/coffee.sqlite')
         self.mainapp = mainapp
 
     def addrow(self):

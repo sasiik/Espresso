@@ -19,7 +19,7 @@ class Example(QWidget, Ui_Form):
 
     def initTable(self):
         db = QSqlDatabase.addDatabase('QSQLITE')
-        db.setDatabaseName('coffee.sqlite')
+        db.setDatabaseName('data/coffee.sqlite')
         db.open()
         model = QSqlTableModel(self, db)
         model.setTable('coffee')
@@ -30,6 +30,7 @@ class Example(QWidget, Ui_Form):
     def addTask(self):
         self.addTaskWindow = AddRow(self)
         self.addTaskWindow.show()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
