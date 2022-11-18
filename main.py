@@ -6,7 +6,7 @@ from PyQt5.QtSql import QSqlDatabase, QSqlTableModel
 from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QInputDialog
 from random import randint
 from widget import Ui_Form
-
+from add import AddRow
 import sqlite3
 
 
@@ -15,6 +15,7 @@ class Example(QWidget, Ui_Form):
         super().__init__()
         self.setupUi(self)
         self.initTable()
+        self.pushButton.clicked.connect(self.addTask)
 
     def initTable(self):
         db = QSqlDatabase.addDatabase('QSQLITE')
@@ -23,7 +24,12 @@ class Example(QWidget, Ui_Form):
         model = QSqlTableModel(self, db)
         model.setTable('coffee')
         model.select()
-        self.tableWidget.setModel(model)
+        self.tableView.setModel(model)
+        db.close()
+
+    def addTask(self):
+        self.addTaskWindow = AddRow(self)
+        self.addTaskWindow.show()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

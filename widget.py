@@ -15,9 +15,12 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(591, 445)
-        self.tableWidget = QtWidgets.QTableView(Form)
-        self.tableWidget.setGeometry(QtCore.QRect(10, 10, 571, 421))
-        self.tableWidget.setObjectName("tableWidget")
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setGeometry(QtCore.QRect(480, 10, 89, 25))
+        self.pushButton.setObjectName("pushButton")
+        self.tableView = QtWidgets.QTableView(Form)
+        self.tableView.setGeometry(QtCore.QRect(10, 10, 461, 421))
+        self.tableView.setObjectName("tableView")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -25,3 +28,4 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+        self.pushButton.setText(_translate("Form", "Add Row"))

@@ -13,12 +13,25 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>10</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Row</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>571</width>
+     <width>461</width>
      <height>421</height>
     </rect>
    </property>
